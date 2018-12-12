@@ -208,19 +208,19 @@ namespace robobloq {
     const pro = new Protocol();
     const rb = new Robot();
 
-    //% blockId="robobloqInit" block="Robobloq init"
+    // blockId="robobloqInit" block="Robobloq init"
     export function robobloqInit(): void {
         rb.SystemInit();
     }
 
-    //% blockId="lightRgb" block="set %e| in LED panel red %red|green %green | blue %blue"
+    // blockId="lightRgb" block="set %e| in LED panel red %red|green %green | blue %blue"
     export function lightRgb(e:lightEnum,red:number,green:number,blue:number): void {
         let oid = 0;// rb.orderId(); //0;
         let list = pro.setLed(oid,e,red,green,blue);
         rb.write(list);
     }
 
-    //% blockId="getUltrasonicValue" block="read ultrasonic sensor %e"
+    // blockId="getUltrasonicValue" block="read ultrasonic sensor %e"
     export function getUltrasonicValue(e:portEnum): number {
         let oid = rb.orderId();
         let list = pro.getUltrasonicValue(oid,e);
@@ -303,7 +303,7 @@ namespace robobloq {
         rb.write(list);
     }
 
-    
+    //% blockId="setMp3" block="Mp3 %port| %action"
     export function setMp3(port: portEnum, action: mp3Enum1): void{
         let oid = 0;
         let info = 0;
@@ -328,7 +328,7 @@ namespace robobloq {
         let list = pro.setMp3(oid, port, action, info);
         rb.write(list);
     }
-    //% blockId="setMp3Sound" block="MP3 %port |sound%sound"
+    /*//% blockId="setMp3Sound" block="MP3 %port |sound%sound" */
     export function setMp3Sound(port: portEnum, sound: number): void {
         let oid = 0;
         if(sound > 100){
@@ -340,7 +340,7 @@ namespace robobloq {
         let list = pro.setMp3(oid, port, 0x03, sound/7);
         rb.write(list);
     }
-    //% blockId="getSoundValue" block="%port |get the value of the sound sensor"
+    /*//% blockId="getSoundValue" block="%port |get the value of the sound sensor"*/
     export function getSoundValue(port: portEnum): number {
         let orid = rb.orderId();
         let list = pro.getSoundValue(orid, port);
