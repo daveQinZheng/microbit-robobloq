@@ -303,7 +303,7 @@ namespace robobloq {
         rb.write(list);
     }
 
-    //% blockId="setMp3" block="Mp3 %port| %action"
+    
     export function setMp3(port: portEnum, action: mp3Enum1): void{
         let oid = 0;
         let info = 0;
